@@ -1,7 +1,11 @@
 <form [formGroup]="fGroup" (ngSubmit)="onSubmit()">
-    <div class="container-fluid">
-        <div class="mb-3 row">
-            <label class="col-sm-2 col-form-label">Usuário</label>
+    <div class="container">
+        <div>
+          <img id="logo" [src]="img">
+        </div>
+        <div id="user" class="row">
+          <div></div>
+            <label class="col-sm-2 col-xl-2 col-form-label">Usuário</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" formControlName="accessKeyId">
             </div>
@@ -12,7 +16,8 @@
               <input type="password" class="form-control" formControlName="secretKey">
             </div>
         </div>
+        <button id="logar" type="submit" class="btn btn-light btn-sm">Logar</button>
     </div>
-    <button type="submit" class="btn btn-light">Logar</button>
+    
 </form>
 

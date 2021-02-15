@@ -1,5 +1,6 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { DadosPagamento } from 'src/app/interfaces/pagamento';
 import { ApiService } from '../url/api.service';
 
 @Injectable({
@@ -39,6 +40,7 @@ export class PagamentoService {
       },
       shippingAddress: {
         street: '',
+        receiverName: '',
         number: '',
         complement: '',
         postalCode: '',
@@ -50,22 +52,21 @@ export class PagamentoService {
     shoppingCart: []
   }
 
-
-
   constructor(
     private http: HttpClient,
     private api: ApiService) { }
 
-  pagar(allProdutoObj: any) {
+    finalizarTransacao (allObj: any) {
+      const options: any = {
+        headers: new HttpHeaders({'Content-type': 'application/json; charset=UTF-8'}),
+        observe: 'response' as 'response'
+      };
+  
+      return this.http.post<any>(`${this.api.base+this.api.pagar}`, JSON.stringify(allObj), options)
+      .subscribe(data => {
+        console.log(data);
+      })
 
-    const options: any = {
-      headers: new HttpHeaders({'Content-type': 'application/json; charset=UTF-8'})
-    };
-
-    return this.http.post<any>(`${this.api.base+this.api.pagar}`, JSON.stringify(allProdutoObj))
-    .subscribe((res: any) => {
-      console.log(res);
-    });
-  }
+    }
 
 }

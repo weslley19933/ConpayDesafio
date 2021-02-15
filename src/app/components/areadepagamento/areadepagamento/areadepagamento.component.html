@@ -1,0 +1,193 @@
+<div class="container mt-5">
+    <div id="titulo">
+        <h1>Área de Pagamento</h1>
+    </div>
+    <div class="cardForm">
+        <div class="row">
+            <div class="col">
+                <form [formGroup]="fGroupDP">
+                    <fieldset>
+                        <legend>Dados Pessoais</legend>
+                    </fieldset>
+                    <div class="form-group">
+                      <label>Nome completo</label>
+                      <input type="text" formControlName="fullName" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-12">
+                          <label>E-mail</label>
+                          <input type="email" formControlName="email" class="form-control">
+                        </div>
+                      </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>CPF ou CNPJ</label>
+                          <input type="text" formControlName="documentNumber" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Data de nascimento</label>
+                          <input type="text" formControlName="dateOfBirth" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>DDD</label>
+                            <input type="text" formControlName="ddd" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Telefone</label>
+                            <input type="text" formControlName="phoneNumber" class="form-control">
+                        </div>
+                    </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="cardForm">
+        <div class="row">
+            <div class="col">
+                <form [formGroup]="fGroupADR">
+                    <fieldset>
+                        <legend>Endereço de Cobrança</legend>
+                    </fieldset>
+                    <div class="form-group">
+                      <label>Endereço</label>
+                      <input type="text" formControlName="street" class="form-control">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Número</label>
+                          <input type="text" formControlName="number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Complemento</label>
+                          <input type="text" formControlName="complement" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>CEP</label>
+                            <input type="text" formControlName="postalCode" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label>Bairro</label>
+                            <input type="text" formControlName="district" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-6">
+                        <label>Cidade</label>
+                        <input type="text" formControlName="city" class="form-control">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <label>Estado</label>
+                        <select formControlName="federationUnit" class="form-control">
+                          <option selected *ngFor="let estado of estados" [value]="estado.value">{{estado.value}}</option>
+                        </select>
+                      </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardForm">
+        <div class="row">
+            <div class="col">
+                <form [formGroup]="fGroupSADR">
+                    <fieldset>
+                        <legend>Endereço de Entrega</legend>
+                    </fieldset>
+                    <div class="form-group">
+                        <label>Endereço</label>
+                        <input type="text" formControlName="street" class="form-control">
+                      </div>
+                      <div class="form-group">
+                        <label>Destinatário</label>
+                        <input type="text" formControlName="receiverName" class="form-control">
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                            <label>Número</label>
+                            <input type="text" formControlName="number" class="form-control">
+                          </div>
+                          <div class="form-group col-md-6">
+                            <label>Complemento</label>
+                            <input type="text" formControlName="complement" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                          <div class="form-group col-md-6">
+                              <label>CEP</label>
+                              <input type="text" formControlName="postalCode" class="form-control">
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label>Bairro</label>
+                              <input type="text" formControlName="district" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label>Cidade</label>
+                          <input type="text" formControlName="city" class="form-control">
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label>Estado</label>
+                          <select formControlName="federationUnit" class="form-control">
+                            <option selected *ngFor="let estado of estados" [value]="estado.value">{{estado.value}}</option>
+                          </select>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="cardForm">
+        <div class="row">
+            <div class="col">
+                <form [formGroup]="fGroupCARD">
+                    <fieldset>
+                        <legend>Dados do Cartão</legend>
+                    </fieldset>
+                    <div class="form-row">
+                        <div class="form-group col-md-9">
+                          <label>Número</label>
+                          <input type="text" formControlName="number" class="form-control">
+                        </div>
+                        <div class="form-group col-md-1">
+                          <label>Mês</label>
+                          <input type="text" formControlName="exp_month" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>Ano</label>
+                            <input type="text" formControlName="exp_year" class="form-control">
+                          </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-10">
+                            <label>Nome Impresso</label>
+                            <input type="text" formControlName="name" class="form-control">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label>CVV</label>
+                            <input type="text" formControlName="security_code" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-12">
+                        <label>Parcelas</label>
+                        <select formControlName="parcelas" class="form-control">
+                          <option selected *ngFor="let parcela of parcelas" [value]="parcela.value">{{parcela.nome}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </form>
+                  <button class="btn btn dark" (click)="endPayment()">Finalizar Transação</button>
+            </div>
+        </div>
+    </div>
+    
+</div>

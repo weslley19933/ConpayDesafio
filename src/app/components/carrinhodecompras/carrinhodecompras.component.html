@@ -1,1 +1,40 @@
-<p>carrinhodecompras works!</p>
+<div *ngIf="items.length === 0" class="container" id="carroVazio">
+    <div id="divCarroVazio">
+        <img id="imgCarroVazio" [src]="imgs.carrinhoVazio">
+    </div>
+    <strong>O seu carrinho de compras está vazio!!!</strong>
+    <div id="VoltarBtn">
+        <button id="VoltarBtn" class="btn btn-dark" routerLink='/produtos'>Voltar</button>
+    </div>
+</div>
+<div class="container mt-2" *ngIf="items.length > 0">
+    <div class="row" id="cabecalho">
+        <div class="col-xl-6">
+            <img [src]="imgs.carrinho" id="carrinhoIcon">
+            <span id="spanCarrinho">Meu Carrinho</span>
+        </div>
+        <div class="col-xl-6">
+            <button type="button" class="btn btn-dark" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
+        </div>
+    </div>
+    <div class="row" id="listaProd" *ngFor="let item of items">
+        <div class="col-xl-2">
+            <img id="imagemProd" [src]="item.img">
+        </div>
+        <div class="col-xl-4" id="nome">
+            <strong >{{item?.name}}</strong>
+        </div>
+        <div class="col-xl-3" id="preco">
+           <p>{{item?.unitCost | currency:"R$"}}</p> 
+        </div>
+    </div>
+    <div class="row" id="total">
+        <div class="col-xl-8">
+        <strong>Total: {{value | currency:"R$"}}</strong>
+        </div>
+        <div class="col-xl-4">
+            <button class="btn btn-dark" (click)="clearCart()">Limpar Carrinho</button>
+            <button class="btn btn-dark" id="finalizaCompraBtn" (click)="endTransation()">Finalizar Compra</button>
+        </div>
+    </div>	
+</div>

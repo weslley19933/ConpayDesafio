@@ -1,0 +1,40 @@
+.container {
+    margin-top: 20%;
+    padding-top: 10%;
+    width: 90%;
+    border-radius: 5px;
+}
+
+#logo {
+    display: block;
+    margin: auto;
+    margin-bottom: 10%;
+}
+
+label {
+    color: white;
+}
+
+button {
+    width: 50%;
+    margin: auto;
+    display: block;
+    color: indianred;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 30%;
+        margin-top: 5%;
+    }
+
+    #user {
+        margin-bottom: 5%;
+    }
+
+    button {
+        width: 100%;
+    }
+}

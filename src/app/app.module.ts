@@ -7,8 +7,8 @@ import {registerLocaleData} from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CarrinhodecomprasComponent } from './components/carrinhodecompras/carrinhodecompras.component';
-import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento.component';
-import { ReactiveFormsModule } from '@angular/forms';
+
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
@@ -17,6 +17,7 @@ import { LoginComponent } from './components/login/login.component';
 import { httpInterceptorProviders } from './interceptors';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutodetalhesComponent } from './components/produtos/produtodetalhes/produtodetalhes.component';
+import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento/areadepagamento.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -32,6 +33,7 @@ registerLocaleData(localePt, 'pt');
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,

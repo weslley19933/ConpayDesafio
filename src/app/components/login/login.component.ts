@@ -1,6 +1,7 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alerts/alert.service';
 import { LoginService } from 'src/app/services/login/login.service';
 
@@ -11,12 +12,15 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginComponent implements OnInit {
 
+  img ='/assets/img/logo-conpay.png'
+
   public fGroup: FormGroup;
 
   constructor(
     private fBuilder: FormBuilder,
     private loginService: LoginService,
-    private alert: AlertService) { 
+    private alert: AlertService,
+    private router: Router) { 
 
     this.fGroup = fBuilder.group({
       accessKeyId: ["", Validators.compose([Validators.required])],
@@ -41,6 +45,8 @@ export class LoginComponent implements OnInit {
     } else {
       this.loginService.login(this.f.accessKeyId.value, this.f.secretKey.value);
     }
+
+    this.router.navigate(['/produtos']);
   }
 
 }

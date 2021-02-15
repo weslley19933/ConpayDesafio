@@ -2,10 +2,10 @@
         <div class="row mt-2">
             <div id="colProduto" class="col-sm-6 col-lg-4 col-xl-3 mt-2 mb-2"  *ngFor="let produto of listaDeProdutos">
                 <div class="card" (click)="goTodetalhesByState(produto)">
-                  <img id="produtoImg" [src]="produto.img">
+                  <img id="produtoImg" [src]="produto?.img">
                   <div class="card-body">
-                    <p class="card-text" id="paragrafoNome">{{ produto.name}}</p>
-                    <p class="card-text">{{ produto.unitCost | currency:'R$'}}</p>
+                    <p class="card-text" id="paragrafoNome">{{ produto?.name}}</p>
+                    <p class="card-text">{{ produto?.unitCost | currency:'R$'}}</p>
                   </div>
                 </div>
             </div>

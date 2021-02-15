@@ -1,0 +1,74 @@
+.container {
+    border: 2px solid white;
+    border-radius: 5px;
+    background-color: white !important;
+}
+
+#carroVazio {
+    width: 40%;
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    text-align: center;
+}
+
+#divCarroVazio {
+    margin-bottom: 5%;
+}
+
+#imgCarroVazio {
+    width: 50%;
+}
+
+#VoltarBtn {
+    margin: auto;
+    width: 80%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+#cabecalho {
+    padding: 1%;
+}
+
+#carrinhoIcon {
+    width: 30px;
+}
+
+#spanCarrinho {
+    font-size: 22px;
+    padding-inline-start: 7px;
+}
+
+#contCompraBtn {
+    float: right;
+}
+
+
+#imagemProd {
+    width: 50%;
+    border-radius: 5px;
+}
+
+#listaProd, #total {
+    border-top: 2px solid grey;
+    padding: 1%;
+}
+
+#preco, #nome {
+    padding-top: 2.5%;
+}
+
+#quantidade {
+    padding-inline-start: 10%;
+    margin-top: 5%;
+}
+
+#remover {
+    float: right;
+    margin-top: 40%;
+}
+
+#finalizaCompraBtn {
+    float: right;
+}

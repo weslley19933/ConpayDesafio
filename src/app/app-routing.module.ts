@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento.component';
+import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento/areadepagamento.component';
 import { CarrinhodecomprasComponent } from './components/carrinhodecompras/carrinhodecompras.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProdutodetalhesComponent } from './components/produtos/produtodetalhes/produtodetalhes.component';

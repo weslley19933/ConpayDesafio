@@ -9,15 +9,14 @@ import { ProdutoService } from 'src/app/services/produto/produto.service';
   styleUrls: ['./produtos.component.css']
 })
 export class ProdutosComponent implements OnInit {
-
-  listaDeProdutos: Produto[];
+  listaDeProdutos: Produto[] = [];
 
   constructor(
     private produtoService: ProdutoService,
     private router: Router) { }
 
   ngOnInit() {
-    this.listaDeProdutos = this.produtoService.produtos;
+    this.listaDeProdutos = this.produtoService.getProduto();
   }
 
   goTodetalhesByState(produto: Produto) {

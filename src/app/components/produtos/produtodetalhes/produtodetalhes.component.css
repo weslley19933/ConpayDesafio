@@ -1,0 +1,73 @@
+.container {
+    width: 90%;
+}
+
+.card {
+    top: 15%;
+}
+
+#title {
+    padding-top: 5%;
+    text-align: center;
+}
+
+#divImgProd {
+    text-align: center;
+}
+
+#produtoImg {
+    width: 50%;
+}
+
+#BtnComprar {
+    width: 80%;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+@media screen and (min-width: 1200px) {
+    .container {
+        width: 50%;
+    }
+    
+    #title {
+        padding-top: 5%;
+        text-align: center;
+    }
+    
+    #divImgProd {
+        text-align: center;
+    }
+    
+    #produtoImg {
+        width: 50%;
+    }
+    
+    .card {
+        padding: 5%;
+        margin: auto;
+        display: block;
+    }
+
+    #descricao {
+        margin: auto;
+        width: 90%;
+        margin-left: 8%;
+    }
+
+    #span {
+        align-items: center;
+    }
+
+    #BtnComprar {
+        margin: auto;
+        display: block;
+        margin-bottom: 3%;
+    }
+
+}
+
+/*
+
+
+*/

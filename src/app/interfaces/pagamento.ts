@@ -35,6 +35,7 @@ export interface DadosPagamento {
       },
       shippingAddress: {
         street: string,
+        receiverName: string,
         number: string,
         complement: string,
         postalCode: string,
