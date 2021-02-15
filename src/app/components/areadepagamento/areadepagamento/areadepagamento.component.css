@@ -1,6 +1,10 @@
 .container {
-    width: 60%;
+    width: 100%;
     border: 1px solid transparent;
+}
+
+#logo {
+    margin-bottom: 10%;
 }
 
 #titulo {
@@ -21,7 +25,25 @@ fieldset {
 
 .cardForm {
     background-color: white !important;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin-bottom: 5%;
     border-radius: 10px;
+}
+
+button {
+    display: block;
+    margin: auto;
+    margin-bottom: 10%;
+    width: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+
+    .container {
+        width: 60%;
+    }
+
+
+    #logo {
+        margin-bottom: 5%;
+    }
 }

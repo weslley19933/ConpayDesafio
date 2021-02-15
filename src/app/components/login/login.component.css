@@ -41,7 +41,7 @@ input:focus {
   outline: 0;
 }
 
-input[type=text] {
+input[type=text],  input[type=password]{
   background-color: #f6f6f6;
   border: none;
   padding: 15px 32px;

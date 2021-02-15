@@ -10,6 +10,8 @@ import { PagamentoService } from 'src/app/services/pagamento/pagamento.service';
 })
 export class AreadepagamentoComponent implements OnInit {
 
+  img ='/assets/img/logo-conpay.png'
+
   data: any = this.pagamentoService.allProdutoObj;
    
   estados = [
@@ -71,46 +73,46 @@ export class AreadepagamentoComponent implements OnInit {
     private fBuilder: FormBuilder) {
 
     this.fGroupDP = fBuilder.group({
-      fullName: ['Anthony C E Teixeira', Validators.compose([Validators.required, Validators.maxLength(80)])],
-      email: ['anthonytexeira@outlook.com', Validators.compose([Validators.required, Validators.maxLength(60)])],
-      documentNumber: ['25441545447', Validators.compose([Validators.required, Validators.maxLength(14)])],
+      fullName: ['', Validators.compose([Validators.required, Validators.maxLength(80)])],
+      email: ['', Validators.compose([Validators.required, Validators.maxLength(60)])],
+      documentNumber: ['', Validators.compose([Validators.required, Validators.maxLength(14)])],
       dateOfBirth: [''],
-      ddd: ['11', Validators.compose([Validators.required, Validators.maxLength(2)])],
-      phoneNumber: ['996587597', Validators.compose([Validators.required, Validators.maxLength(9)])]
+      ddd: ['', Validators.compose([Validators.required, Validators.maxLength(2)])],
+      phoneNumber: ['', Validators.compose([Validators.required, Validators.maxLength(9)])]
     });
 
     this.fGroupADR = fBuilder.group({
 
-      street: ['Avenida Mercedes', Validators.compose([Validators.required, Validators.maxLength(80)])],
-      number: ['232', Validators.compose([Validators.required, Validators.maxLength(20)])],
-      complement: ['Casa', Validators.compose([Validators.required, Validators.maxLength(40)])],
-      postalCode: ['05081060', Validators.compose([Validators.required, Validators.maxLength(8)])],
-      district: ['Alto da Lapa', Validators.compose([Validators.required, Validators.maxLength(60)])],
-      city: ['São Paulo', Validators.compose([Validators.required, Validators.maxLength(60)])],
-      federationUnit: ['SP', Validators.compose([Validators.required])]
+      street: ['', Validators.compose([Validators.required, Validators.maxLength(80)])],
+      number: ['', Validators.compose([Validators.required, Validators.maxLength(20)])],
+      complement: ['', Validators.compose([Validators.required, Validators.maxLength(40)])],
+      postalCode: ['', Validators.compose([Validators.required, Validators.maxLength(8)])],
+      district: ['', Validators.compose([Validators.required, Validators.maxLength(60)])],
+      city: ['', Validators.compose([Validators.required, Validators.maxLength(60)])],
+      federationUnit: ['', Validators.compose([Validators.required])]
 
     });
 
     this.fGroupSADR = fBuilder.group({
 
-      street: ['Shipping Address Street'],
-      receiverName: ['Receiver Name'],
-      number: ['111'],
-      complement: ['Casa'],
-      postalCode: ['58015682'],
-      district: ['Jaguaribe'],
-      city: ['João Pessoa'],
-      federationUnit: ['PB']
+      street: [this.fGroupADR.value.street],
+      receiverName: [this.fGroupADR.value.receiverName],
+      number: [this.fGroupADR.value.number],
+      complement: [this.fGroupADR.value.complement],
+      postalCode: [this.fGroupADR.value.postalCode],
+      district: [this.fGroupADR.value.district],
+      city: [this.fGroupADR.value.city],
+      federationUnit: [this.fGroupADR.value.federationUnit]
 
     });
 
     this.fGroupCARD = fBuilder.group({
 
-      number: ['4111111111111111', Validators.compose([Validators.required, Validators.maxLength(16)])],
-      exp_month: ['03', Validators.compose([Validators.required, Validators.maxLength(2)])],
-      exp_year: ['2028', Validators.compose([Validators.required, Validators.maxLength(4)])],
-      security_code: ['254', Validators.compose([Validators.required, Validators.maxLength(4)])],
-      name: ['Anthony C E Teixeira', Validators.compose([Validators.required, Validators.maxLength(26)])],
+      number: ['', Validators.compose([Validators.required, Validators.maxLength(16)])],
+      exp_month: ['', Validators.compose([Validators.required, Validators.maxLength(2)])],
+      exp_year: ['', Validators.compose([Validators.required, Validators.maxLength(4)])],
+      security_code: ['', Validators.compose([Validators.required, Validators.maxLength(4)])],
+      name: ['', Validators.compose([Validators.required, Validators.maxLength(26)])],
       parcelas: [ 1, Validators.compose([Validators.required])]
 
     });

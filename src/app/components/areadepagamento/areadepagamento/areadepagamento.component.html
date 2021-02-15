@@ -1,6 +1,6 @@
 <div class="container mt-5">
     <div id="titulo">
-        <h1>Área de Pagamento</h1>
+        <img id="logo" [src]="img">
     </div>
     <div class="cardForm">
         <div class="row">
@@ -185,9 +185,8 @@
                       </div>
                     </div>
                   </form>
-                  <button class="btn btn-dark" (click)="endPayment()">Finalizar Transação</button>
             </div>
         </div>
     </div>
-    
+    <button class="btn btn-dark" (click)="endPayment()">Finalizar Transação</button>
 </div>

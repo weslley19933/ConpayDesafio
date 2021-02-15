@@ -1,9 +1,9 @@
 import { HttpResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AlertService } from 'src/app/services/alerts/alert.service';
 import { LoginService } from 'src/app/services/login/login.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -20,7 +20,8 @@ export class LoginComponent implements OnInit {
     private fBuilder: FormBuilder,
     private loginService: LoginService,
     private alert: AlertService,
-    private router: Router) { 
+ 
+    private _location: Location) { 
 
     this.fGroup = fBuilder.group({
       accessKeyId: ["", Validators.compose([Validators.required])],
@@ -44,9 +45,9 @@ export class LoginComponent implements OnInit {
       } 
     } else {
       this.loginService.login(this.f.accessKeyId.value, this.f.secretKey.value);
+      this._location.back();
     }
 
-    this.router.navigate(['/produtos']);
   }
 
 }

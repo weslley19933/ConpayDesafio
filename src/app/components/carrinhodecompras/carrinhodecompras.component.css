@@ -1,7 +1,12 @@
-.container {
-    border: 2px solid white;
-    border-radius: 5px;
+.container, .container-fluid, body {
     background-color: white !important;
+}
+
+
+
+#logo {
+    display: flex;
+    vertical-align: middle;
 }
 
 #carroVazio {
@@ -59,16 +64,11 @@
     padding-top: 2.5%;
 }
 
-#quantidade {
-    padding-inline-start: 10%;
-    margin-top: 5%;
-}
-
-#remover {
-    float: right;
-    margin-top: 40%;
-}
-
 #finalizaCompraBtn {
     float: right;
+}
+
+#footer {
+    position: fixed;
+    width: 100%;
 }

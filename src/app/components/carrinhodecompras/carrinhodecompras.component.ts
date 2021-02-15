@@ -46,7 +46,7 @@ export class CarrinhodecomprasComponent implements OnInit{
   }
 
   endTransation() {
-
+    
     this.pagamentoService.allProdutoObj.shoppingCart = this.items;
     this.pagamentoService.allProdutoObj.value = this.value;
     

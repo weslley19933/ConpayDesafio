@@ -1,40 +1,49 @@
-<div *ngIf="items.length === 0" class="container" id="carroVazio">
-    <div id="divCarroVazio">
-        <img id="imgCarroVazio" [src]="imgs.carrinhoVazio">
-    </div>
-    <strong>O seu carrinho de compras está vazio!!!</strong>
-    <div id="VoltarBtn">
-        <button id="VoltarBtn" class="btn btn-dark" routerLink='/produtos'>Voltar</button>
-    </div>
-</div>
-<div class="container mt-2" *ngIf="items.length > 0">
-    <div class="row" id="cabecalho">
-        <div class="col-xl-6">
-            <img [src]="imgs.carrinho" id="carrinhoIcon">
-            <span id="spanCarrinho">Meu Carrinho</span>
+<body>
+    <div *ngIf="items.length === 0" class="container" id="carroVazio">
+        <div id="divCarroVazio">
+            <img id="imgCarroVazio" [src]="imgs.carrinhoVazio">
         </div>
-        <div class="col-xl-6">
-            <button type="button" class="btn btn-dark" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
+        <strong>O seu carrinho de compras está vazio!!!</strong>
+        <div id="VoltarBtn">
+            <button id="VoltarBtn" class="btn btn-dark" routerLink='/produtos'>Voltar</button>
         </div>
     </div>
-    <div class="row" id="listaProd" *ngFor="let item of items">
-        <div class="col-xl-2">
-            <img id="imagemProd" [src]="item.img">
+    <div class="container-fluid" *ngIf="items.length > 0">
+        <div class="row" id="cabecalho">
+            <div id="logo" class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <img [src]="imgs.carrinho" id="carrinhoIcon">
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <button type="button" class="btn btn-dark" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
+            </div>
         </div>
-        <div class="col-xl-4" id="nome">
-            <strong >{{item?.name}}</strong>
+        <div class="row" id="listaProd" *ngFor="let item of items">
+            <div class="col-xl-2">
+                <img id="imagemProd" [src]="item.img">
+            </div>
+            <div class="col-xl-4" id="nome">
+                <strong >{{item?.name}}</strong>
+            </div>
+            <div class="col-xl-3" id="preco">
+               <p>{{item?.unitCost | currency:"R$"}}</p> 
+            </div>
         </div>
-        <div class="col-xl-3" id="preco">
-           <p>{{item?.unitCost | currency:"R$"}}</p> 
-        </div>
+        <div class="row" id="total">
+            <div class="col-xl-8">
+            <strong>Total: {{value | currency:"R$"}}</strong>
+            </div>
+            <div class="col-xl-4">
+                <button class="btn btn-dark" (click)="clearCart()">Limpar Carrinho</button>
+                <button class="btn btn-dark" id="finalizaCompraBtn" (click)="endTransation()">Finalizar Compra</button>
+            </div>
+        </div>	
     </div>
-    <div class="row" id="total">
-        <div class="col-xl-8">
-        <strong>Total: {{value | currency:"R$"}}</strong>
+    <footer id="footer" class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+          © 2020 Copyright:
+          <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
         </div>
-        <div class="col-xl-4">
-            <button class="btn btn-dark" (click)="clearCart()">Limpar Carrinho</button>
-            <button class="btn btn-dark" id="finalizaCompraBtn" (click)="endTransation()">Finalizar Compra</button>
-        </div>
-    </div>	
-</div>
+        <!-- Copyright -->
+    </footer>
+</body>
