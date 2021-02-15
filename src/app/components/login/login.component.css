@@ -1,40 +1,70 @@
-.container {
-    margin-top: 20%;
-    padding-top: 10%;
-    width: 90%;
-    border-radius: 5px;
-}
-
 #logo {
-    display: block;
-    margin: auto;
-    margin-bottom: 10%;
+    width: 60%;
 }
 
-label {
-    color: white;
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column; 
+  justify-content: center;
+  width: 100%;
+  min-height: 100%;
+  padding: 20px;
 }
 
-button {
-    width: 50%;
-    margin: auto;
-    display: block;
-    color: indianred;
-    margin-top: 10%;
-    margin-bottom: 10%;
+#formContent {
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-radius: 10px 10px 10px 10px;
+  background: #fff;
+  padding: 30px;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  padding: 0px;
+  -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
+  text-align: center;
 }
 
-@media screen and (min-width: 1200px) {
-    .container {
-        width: 30%;
-        margin-top: 5%;
-    }
-
-    #user {
-        margin-bottom: 5%;
-    }
-
-    button {
-        width: 100%;
-    }
+input[type=button], input[type=submit]  {
+  background-color: #e67164;
+  border: none;
+  color: white;
+  padding: 15px 80px;
+  -webkit-border-radius: 5px 5px 5px 5px;
+  border-radius: 5px 5px 5px 5px;
+  margin: 5px 20px 40px 20px;
 }
+
+input:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+input[type=text] {
+  background-color: #f6f6f6;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  width: 85%;
+  border: 2px solid #f6f6f6;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

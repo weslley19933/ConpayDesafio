@@ -18,6 +18,7 @@ import { httpInterceptorProviders } from './interceptors';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutodetalhesComponent } from './components/produtos/produtodetalhes/produtodetalhes.component';
 import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento/areadepagamento.component';
+import { ModalstatusComponent } from './components/modalstatus/modalstatus.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -29,6 +30,7 @@ registerLocaleData(localePt, 'pt');
     LoginComponent,
     ProdutosComponent,
     ProdutodetalhesComponent,
+    ModalstatusComponent,
   ],
   imports: [
     BrowserModule,

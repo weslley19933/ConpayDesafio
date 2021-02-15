@@ -12,7 +12,7 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class LoginComponent implements OnInit {
 
-  img ='/assets/img/logo-conpay.png'
+  img ='/assets/img/conpaycolor.svg'
 
   public fGroup: FormGroup;
 
