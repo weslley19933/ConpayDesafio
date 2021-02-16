@@ -30,13 +30,10 @@ export class ProdutodetalhesComponent implements OnInit{
   addToCart(produto) {
     this.cartService.addToCart(produto);
     this.alert.alertaSnackBar("Produto adicionado com sucesso!!!", "OK");
-    this.router.navigate(['/produtos']);
   }
 
-  addAndGoToCart(produto) {
-    this.cartService.addToCart(produto);
-    this.alert.alertaSnackBar("Produto adicionado com sucesso!!!", "OK");
-    this.router.navigate(['/carrinhodecompras']);
-  }
+    GoToCart() {
+      this.router.navigate(['/carrinhodecompras']);
+    }
 
 }

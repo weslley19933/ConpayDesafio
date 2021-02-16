@@ -20,7 +20,8 @@ export class CarrinhodecomprasComponent implements OnInit{
     carrinhoVazio: ' /assets/icons/carrinhovazio.svg',
     remover: '/assets/icons/remover.svg',
     adicionar:'/assets/icons/adicionar.svg',
-    subtrair: '/assets/icons/subtrair.svg'
+    subtrair: '/assets/icons/subtrair.svg',
+    finalizar: '/assets/icons/finalizar.svg'
   }
 
   constructor(
@@ -46,7 +47,7 @@ export class CarrinhodecomprasComponent implements OnInit{
   }
 
   endTransation() {
-    
+
     this.pagamentoService.allProdutoObj.shoppingCart = this.items;
     this.pagamentoService.allProdutoObj.value = this.value;
     

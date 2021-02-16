@@ -14,7 +14,7 @@
                 <img [src]="imgs.carrinho" id="carrinhoIcon">
             </div>
             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                <button type="button" class="btn btn-dark" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
+                <button type="button" class="btn btn-dark btn-sm" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
             </div>
         </div>
         <div class="row" id="listaProd" *ngFor="let item of items">
@@ -24,26 +24,20 @@
             <div class="col-xl-4" id="nome">
                 <strong >{{item?.name}}</strong>
             </div>
-            <div class="col-xl-3" id="preco">
-               <p>{{item?.unitCost | currency:"R$"}}</p> 
-            </div>
         </div>
-        <div class="row" id="total">
-            <div class="col-xl-8">
-            <strong>Total: {{value | currency:"R$"}}</strong>
-            </div>
-            <div class="col-xl-4">
-                <button class="btn btn-dark" (click)="clearCart()">Limpar Carrinho</button>
-                <button class="btn btn-dark" id="finalizaCompraBtn" (click)="endTransation()">Finalizar Compra</button>
-            </div>
-        </div>	
     </div>
-    <footer id="footer" class="bg-light text-center text-lg-start">
-        <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-          © 2020 Copyright:
-          <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
+   
 </body>
+
+<footer class="bg-light">
+    <div class="container" *ngIf="items.length > 0">
+        <div id="linhaFooter" class="row">
+            <div class="col-6">
+                <strong>Total: {{value | currency:"R$"}}</strong>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-dark btn-sm">Finalizar Compra</button>
+            </div>
+        </div>
+    </div>
+</footer>

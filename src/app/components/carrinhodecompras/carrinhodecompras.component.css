@@ -2,6 +2,9 @@
     background-color: white !important;
 }
 
+body {
+    overflow-x: hidden;
+}
 
 
 #logo {
@@ -68,7 +71,20 @@
     float: right;
 }
 
-#footer {
-    position: fixed;
+
+footer {
+    padding: 2%;
+    background-color: #BBBDBF;
+    position: absolute;
+    bottom: 0;
     width: 100%;
+}
+
+#linhaFooter {
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+.btn-sm {
+    float: right;
 }

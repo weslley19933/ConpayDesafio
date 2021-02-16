@@ -11,10 +11,11 @@ export class CartService {
 
   addToCart(produto) {
     this.items.push(produto);
-    localStorage.setItem('cart', JSON.stringify(this.items))
+    localStorage.setItem('cart', JSON.stringify(this.items));
   }
 
   getItems() {
+    this.items = JSON.parse(localStorage.getItem('cart'));
     return this.items;
   }
 
