@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento/areadepagamento.component';
-import { CarrinhodecomprasComponent } from './components/carrinhodecompras/carrinhodecompras.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProdutodetalhesComponent } from './components/produtos/produtodetalhes/produtodetalhes.component';
 import { ProdutosComponent } from './components/produtos/produtos.component';
@@ -27,8 +27,8 @@ const routes: Routes = [
     component: ProdutodetalhesComponent
   },
   {
-    path: 'carrinhodecompras',
-    component: CarrinhodecomprasComponent
+    path: 'carrinho',
+    component: CarrinhoComponent
   },
   {
     path: 'areadepagamento',

@@ -15,33 +15,63 @@ export class CartService {
 
   addToCart(produto) {
     this.items = this.getItems();
-    console.log(this.items);
+    let newProduto = produto;
     if (this.items == null) {
       this.items = [];
       this.items.push(produto);
-      localStorage.setItem('cart', JSON.stringify(this.items));
+      window.localStorage.setItem('cart', JSON.stringify(this.items));
     } else {
-      let newProduto = produto;
       let verifica = this.items.find(produto => produto.product_code == newProduto.product_code);
       console.log(verifica);
-      if (this. items == null || verifica) {
+      if (verifica) {
         this.alert.alertaSnackBar("Este produto já está contido no seu carrinho de compras!!!","OK");
       } else {
         this.items.push(produto);
-        localStorage.setItem('cart', JSON.stringify(this.items));
+        window.localStorage.setItem('cart', JSON.stringify(this.items));
         this.alert.alertaSnackBar("Produto adicionado com sucesso!!!", "OK");
       }
     }
   }
 
   getItems() {
-    this.items = JSON.parse(localStorage.getItem('cart'));
+    this.items = JSON.parse(window.localStorage.getItem('cart'));
     return this.items;
   }
 
   clearCart() {
     this.items = [];
-    localStorage.removeItem('cart');
+    window.localStorage.removeItem('cart');
     return this.items;
+  }
+
+  removeProd(produto) {
+    this.items.splice(produto, 1);
+    window.localStorage.setItem('cart', JSON.stringify(this.items));
+  }
+
+
+  increaseQuantity(produto) {
+    this.items = JSON.parse(window.localStorage.getItem('cart'));
+    let position = this.items.findIndex (x => x.product_code == produto.product_code);
+    if (position != -1) {
+      this.items[position].quantity++; 
+    }
+    window.localStorage.setItem('cart', JSON.stringify(this.items));
+    return this.items[position].quantity;
+    
+  }
+
+  decreaseQuantity(produto) {
+    this.items = JSON.parse(window.localStorage.getItem('cart'));
+    let position = this.items.findIndex (x => x.product_code == produto.product_code);
+    if (position != -1) {
+      this.items[position].quantity--; 
+      if(this.items[position].quantity < 1) {
+        this.removeProd(produto);
+      }
+    }
+    window.localStorage.setItem('cart', JSON.stringify(this.items));
+    return this.items[position].quantity;
+
   }
 }

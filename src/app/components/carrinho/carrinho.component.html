@@ -1,0 +1,50 @@
+<body>
+    <div class="body">
+        <div class="container-fluid">
+            <div class="row" id="cabecalho">
+                <div id="logo" class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <img [src]="imgs.carrinho" id="carrinhoIcon">
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                    <button type="button" class="btn btn-dark btn-sm" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
+                </div>
+            </div>
+            <div class="row" id="listaProd" *ngFor="let item of items">
+                <div class="col-xl-2">
+                    <img id="imagemProd" [src]="item.img">
+                </div>
+                <div class="col-xl-4" id="nome">
+                    <strong >{{item?.name}}</strong>
+                </div>
+                <div class="col-xl-6">
+                    <img [src]="imgs.remover" (click)="removeProd(produto)">
+                </div>
+            </div>
+            <div class="row" *ngFor="let item of items">
+                <div class="col-xl-4">
+                    <img  [src]="imgs.adicionar" (click)="increaseQtd(item)">
+                </div>
+                <div class="col-xl-4">
+                    <strong id="quantidade">{{item?.quantity}}</strong>
+                </div>
+                <div class="col-xl-4">
+                    <img [src]="imgs.subtrair" (click)="decreaseQtd(item)">
+                </div>
+            </div>
+        </div>
+        
+    </div>  
+    
+    <footer class="bg-light">
+        <div class="container" *ngIf="items.length > 0">
+            <div id="linhaFooter" class="row">
+                <div class="col-6">
+                    <strong>Total: {{value | currency:"R$"}}</strong>
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-dark btn-sm" (click)="endTransation()">Finalizar Compra</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>

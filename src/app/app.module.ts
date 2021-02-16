@@ -6,31 +6,31 @@ import {registerLocaleData} from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CarrinhodecomprasComponent } from './components/carrinhodecompras/carrinhodecompras.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 import { LoginComponent } from './components/login/login.component';
 import { httpInterceptorProviders } from './interceptors';
 import { ProdutosComponent } from './components/produtos/produtos.component';
 import { ProdutodetalhesComponent } from './components/produtos/produtodetalhes/produtodetalhes.component';
 import { AreadepagamentoComponent } from './components/areadepagamento/areadepagamento/areadepagamento.component';
 import { ModalstatusComponent } from './components/modalstatus/modalstatus.component';
+import { CarrinhoComponent } from './components/carrinho/carrinho.component';
 
 registerLocaleData(localePt, 'pt');
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarrinhodecomprasComponent,
     AreadepagamentoComponent,
     LoginComponent,
     ProdutosComponent,
     ProdutodetalhesComponent,
     ModalstatusComponent,
+    CarrinhoComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +38,9 @@ registerLocaleData(localePt, 'pt');
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
+    MatDialogModule,
     MatSnackBarModule,
-    MatIconModule,
+    MatButtonModule,
     AppRoutingModule,
   ],
   providers: [
@@ -50,6 +50,7 @@ registerLocaleData(localePt, 'pt');
       useValue: 'pt'
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [ModalstatusComponent]
 })
 export class AppModule { }

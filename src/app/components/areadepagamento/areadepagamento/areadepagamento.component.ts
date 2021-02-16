@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 import { DadosPagamento } from 'src/app/interfaces/pagamento';
 import { PagamentoService } from 'src/app/services/pagamento/pagamento.service';
+
 
 @Component({
   selector: 'app-areadepagamento',
@@ -70,15 +72,16 @@ export class AreadepagamentoComponent implements OnInit {
 
   constructor(
     private pagamentoService: PagamentoService,
-    private fBuilder: FormBuilder) {
+    private fBuilder: FormBuilder,
+    ) {
 
     this.fGroupDP = fBuilder.group({
       fullName: ['', Validators.compose([Validators.required, Validators.maxLength(80)])],
-      email: ['', Validators.compose([Validators.required, Validators.maxLength(60)])],
+      email: ['', Validators.compose([Validators.required, Validators.maxLength(60), Validators.pattern(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/i)])],
       documentNumber: ['', Validators.compose([Validators.required, Validators.maxLength(14)])],
       dateOfBirth: [''],
-      ddd: ['', Validators.compose([Validators.required, Validators.maxLength(2)])],
-      phoneNumber: ['', Validators.compose([Validators.required, Validators.maxLength(9)])]
+      ddd: ['', Validators.compose([Validators.required, Validators.minLength(2), Validators.maxLength(2)])],
+      phoneNumber: ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(9)])]
     });
 
     this.fGroupADR = fBuilder.group({
@@ -86,7 +89,7 @@ export class AreadepagamentoComponent implements OnInit {
       street: ['', Validators.compose([Validators.required, Validators.maxLength(80)])],
       number: ['', Validators.compose([Validators.required, Validators.maxLength(20)])],
       complement: ['', Validators.compose([Validators.required, Validators.maxLength(40)])],
-      postalCode: ['', Validators.compose([Validators.required, Validators.maxLength(8)])],
+      postalCode: ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(8)])],
       district: ['', Validators.compose([Validators.required, Validators.maxLength(60)])],
       city: ['', Validators.compose([Validators.required, Validators.maxLength(60)])],
       federationUnit: ['', Validators.compose([Validators.required])]
@@ -109,9 +112,9 @@ export class AreadepagamentoComponent implements OnInit {
     this.fGroupCARD = fBuilder.group({
 
       number: ['', Validators.compose([Validators.required, Validators.maxLength(16)])],
-      exp_month: ['', Validators.compose([Validators.required, Validators.maxLength(2)])],
-      exp_year: ['', Validators.compose([Validators.required, Validators.maxLength(4)])],
-      security_code: ['', Validators.compose([Validators.required, Validators.maxLength(4)])],
+      exp_month: ['', Validators.compose([Validators.required,Validators.minLength(2), Validators.maxLength(2)])],
+      exp_year: ['', Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(4)])],
+      security_code: ['', Validators.compose([Validators.required, Validators.minLength(3), Validators.maxLength(4)])],
       name: ['', Validators.compose([Validators.required, Validators.maxLength(26)])],
       parcelas: [ 1, Validators.compose([Validators.required])]
 

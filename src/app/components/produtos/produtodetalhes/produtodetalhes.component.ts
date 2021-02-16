@@ -32,7 +32,7 @@ export class ProdutodetalhesComponent implements OnInit{
   }
 
     GoToCart() {
-      this.router.navigate(['/carrinhodecompras']);
+      this.router.navigate(['/carrinho']);
     }
 
 }

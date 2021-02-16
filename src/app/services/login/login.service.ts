@@ -75,5 +75,10 @@ export class LoginService {
     return true;
   }
 
+  logout() {
+    window.localStorage.removeItem('token');
+    this.router.navigate(['/produtos']);
+  }
+
 
 }

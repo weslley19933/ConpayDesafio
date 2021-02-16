@@ -1,36 +1,21 @@
 .container, .container-fluid, body {
-    background-color: white !important;
+    background-color: white;
 }
 
-.container-fluid {
-    overflow-x: hidden;
-}
-
-.body {
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
+.body {
+    overflow-y: scroll;
+    flex-grow: 1;
+}
+
 #logo {
     display: flex;
-    vertical-align: middle;
-}
-
-#carroVazio {
-    width: 40%;
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    text-align: center;
-}
-
-#divCarroVazio {
-    margin-bottom: 5%;
-}
-
-#imgCarroVazio {
-    width: 50%;
+    vertical-align: center;
 }
 
 #VoltarBtn {
@@ -57,13 +42,11 @@
     float: right;
 }
 
-
 #imagemProd {
     width: 50%;
-    border-radius: 5px;
 }
 
-#listaProd, #total {
+#listaProd{
     border-top: 2px solid grey;
     padding: 1%;
 }
@@ -76,11 +59,11 @@
     float: right;
 }
 
-
 footer {
+    bottom:0;
+    width:100%;
     padding: 2%;
-    background-color: #BBBDBF;
-    width: 100%;
+    background-color: #bbbdbf;
 }
 
 #linhaFooter {
@@ -91,3 +74,4 @@ footer {
 .btn-sm {
     float: right;
 }
+

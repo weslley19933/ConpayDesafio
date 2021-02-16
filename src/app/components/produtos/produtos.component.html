@@ -1,14 +1,49 @@
-<div class="container-fluid">
-        <div class="row mt-2">
-            <div id="colProduto" class="col-sm-6 col-lg-4 col-xl-3 mt-2 mb-2"  *ngFor="let produto of listaDeProdutos">
-                <div class="card" (click)="goTodetalhesByState(produto)">
-                  <img id="produtoImg" [src]="produto?.img">
-                  <div class="card-body">
-                    <p class="card-text" id="paragrafoNome">{{ produto?.name}}</p>
-                    <p class="card-text">{{ produto?.unitCost | currency:'R$'}}</p>
-                  </div>
+<header>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="imgLogo" class="col-6">
+        <img class="logo" [src]="icones.logo">
+      </div>
+      <div class="col-3">
+        <img id="carrinhoLogo" [src]="icones.carrinho" (click)="gotoCart()">
+      </div>
+      <div>
+        <div class="col-3">
+          <button *ngIf="!loginService.isUserLoggedIn() != false" id="logarBtn" type="button" class="btn btn-outline-light" (click)="login()">Login</button>
+        </div>
+        <div class="col-3">
+          <button *ngIf="!loginService.isUserLoggedIn() == false" id="logarBtn" type="button" class="btn btn-outline-light" (click)="logout()">Logout</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</header>
+<body>
+  <div class="container-fluid">
+    <div class="row mt-2">
+        <div id="colProduto" class="col-sm-6 col-lg-4 col-xl-3 mt-2 mb-2"  *ngFor="let produto of listaDeProdutos">
+            <div class="card">
+              <img id="produtoImg" [src]="produto?.img">
+              <div class="card-body">
+                <p class="card-text" id="paragrafoNome">{{ produto?.name}}</p>
+                <p class="card-text">{{ produto?.unitCost | currency:'R$'}}</p>
+              </div>
+              <div id="botoes" class="row">
+                <div class="col-6">
+                  <button class="btn btn-light" (click)="addToCart(produto)">
+                    <img id="carrinho" class="imgIcons" [src]="icones.addCart">
+                  </button>
                 </div>
+                <div class="col-6">
+                  <button class="btn btn-light" (click)="goTodetalhesByState(produto)">
+                    <img id="detalhes" class="imgIcons" [src]="icones.detalhes">
+                  </button>
+                </div>
+              </div>
             </div>
         </div>
-
+    </div>
   </div>
+
+</body>

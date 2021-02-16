@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Produto } from 'src/app/interfaces/produto';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import { PagamentoService } from 'src/app/services/pagamento/pagamento.service';
 
 @Component({
-  selector: 'app-carrinhodecompras',
-  templateUrl: './carrinhodecompras.component.html',
-  styleUrls: ['./carrinhodecompras.component.css']
+  selector: 'app-carrinho',
+  templateUrl: './carrinho.component.html',
+  styleUrls: ['./carrinho.component.css']
 })
-export class CarrinhodecomprasComponent implements OnInit{
-  
+export class CarrinhoComponent implements OnInit {
+
   items = this.cartService.getItems();
   value: number = 0;
 
@@ -38,6 +37,18 @@ export class CarrinhodecomprasComponent implements OnInit{
   clearCart() {
     this.cartService.clearCart();
     window.location.reload();
+  }
+
+  removeProd(produto) {
+    this.cartService.removeProd(produto);
+  }
+
+  increaseQtd(produto) {
+    this.cartService.increaseQuantity(produto);
+  }
+
+  decreaseQtd(produto) {
+    this.cartService.decreaseQuantity(produto);
   }
 
   getTotal() {
