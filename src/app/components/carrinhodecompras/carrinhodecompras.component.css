@@ -2,10 +2,15 @@
     background-color: white !important;
 }
 
-body {
+.container-fluid {
     overflow-x: hidden;
 }
 
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 #logo {
     display: flex;
@@ -75,8 +80,6 @@ body {
 footer {
     padding: 2%;
     background-color: #BBBDBF;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
