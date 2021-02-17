@@ -2,33 +2,32 @@
     <div class="body">
         <div class="container-fluid">
             <div class="row" id="cabecalho">
-                <div id="logo" class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div id="logo" class="col-md-6 col-lg-6 col-xl-6">
                     <img [src]="imgs.carrinho" id="carrinhoIcon">
                 </div>
-                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                <div class="col-md-6 col-lg-6 col-xl-6">
                     <button type="button" class="btn btn-dark btn-sm" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
                 </div>
             </div>
             <div class="row" id="listaProd" *ngFor="let item of items">
-                <div class="col-xl-2">
+                <div class="col-xl-3">
                     <img id="imagemProd" [src]="item.img">
                 </div>
-                <div class="col-xl-4" id="nome">
+                <div class="col-xl-5" id="nome">
                     <strong >{{item?.name}}</strong>
                 </div>
-                <div class="col-xl-6">
-                    <img [src]="imgs.remover" (click)="removeProd(produto)">
-                </div>
-            </div>
-            <div class="row" *ngFor="let item of items">
-                <div class="col-xl-4">
-                    <img  [src]="imgs.adicionar" (click)="increaseQtd(item)">
-                </div>
-                <div class="col-xl-4">
+                <div id="divQuantidade" class="col-xl-3">
+                    
+                    <strong id="espacamento">{{item.unitCost | currency: "R$"}} x</strong>
+
+                    <img id="addImg" [src]="imgs.adicionar" (click)="increaseQtd(item)">
+               
                     <strong id="quantidade">{{item?.quantity}}</strong>
+                
+                    <img id="subtrairIcon" [src]="imgs.subtrair" (click)="decreaseQtd(item)">
                 </div>
-                <div class="col-xl-4">
-                    <img [src]="imgs.subtrair" (click)="decreaseQtd(item)">
+                <div id="remover" class="col-xl-1">
+                    <img [src]="imgs.remover" (click)="removeProd(item)">
                 </div>
             </div>
         </div>

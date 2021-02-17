@@ -25,7 +25,7 @@ export class ProdutosComponent implements OnInit {
     private produtoService: ProdutoService,
     private router: Router,
     private cartService: CartService,
-    private loginService: LoginService,
+    public loginService: LoginService,
     private alert: AlertService) { }
 
   ngOnInit() {

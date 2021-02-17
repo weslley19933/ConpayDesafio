@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from 'src/app/services/cart/cart.service';
 import { LoginService } from 'src/app/services/login/login.service';
@@ -12,7 +12,7 @@ import { PagamentoService } from 'src/app/services/pagamento/pagamento.service';
 export class CarrinhoComponent implements OnInit {
 
   items = this.cartService.getItems();
-  value: number = 0;
+  value: number;
 
   imgs = {
     carrinho: '/assets/icons/carrinhodecompras.svg',
@@ -28,7 +28,7 @@ export class CarrinhoComponent implements OnInit {
     private pagamentoService: PagamentoService,
     private cartService: CartService,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getTotal();
@@ -41,17 +41,28 @@ export class CarrinhoComponent implements OnInit {
 
   removeProd(produto) {
     this.cartService.removeProd(produto);
+    this.items = this.cartService.getItems();
+    this.getTotal();
+    return this.items;
   }
 
   increaseQtd(produto) {
     this.cartService.increaseQuantity(produto);
+    this.items = this.cartService.getItems();
+    this.getTotal();
+    return this.items;
   }
 
   decreaseQtd(produto) {
     this.cartService.decreaseQuantity(produto);
+    this.items = this.cartService.getItems();
+    this.getTotal();
+    return this.items;
   }
 
   getTotal() {
+    this.value = 0;
+    this.items = this.cartService.getItems();
     this.items.forEach(item => {
       this.value += (item.quantity * item.unitCost);
     })

@@ -66,8 +66,8 @@ export class CartService {
     let position = this.items.findIndex (x => x.product_code == produto.product_code);
     if (position != -1) {
       this.items[position].quantity--; 
-      if(this.items[position].quantity < 1) {
-        this.removeProd(produto);
+      if(this.items[position].quantity == 1 || this.items[position].quantity < 1) {
+        this.items[position].quantity = 1;
       }
     }
     window.localStorage.setItem('cart', JSON.stringify(this.items));

@@ -48,11 +48,23 @@ body {
 
 #listaProd{
     border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
     padding: 1%;
 }
 
-#preco, #nome {
-    padding-top: 2.5%;
+#espacamento {
+    margin-right: 4%;
+}
+
+
+ #nome, #divQuantidade, #remover  {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#addImg, #subtrairIcon {
+    cursor: pointer;
 }
 
 #finalizaCompraBtn {

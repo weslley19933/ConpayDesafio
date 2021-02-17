@@ -1,51 +1,6 @@
-  
-header{
-    background-color: #e67164 !important;
-    width: 100%;
-    padding: 5%;
-    position: fixed;
-    top:0;
-    left: 0;
-    z-index: 2;
-}
-
-body {
-    z-index: 1;
-}
-
-#carrinhoLogo {
-    float: right;
-    width: 100%;
-    cursor: pointer;
-}
-
-#logarBtn {
-    background-color: #e67164 !important;
-    border: 1px solid white;
-    float: right;
-    margin-top: 15%;
-}
-
-#logarBtn:hover {
-    color: white;
-}
-
-.logo {
-    width: 70%;
-    margin-top: 5%;
-}
-
 .card {
     width: 90%;
     margin: 0 auto;
-}
-
-.card:hover {
-    cursor: pointer !important;
-}
-  
-.card:focus {
-    cursor: pointer !important;
 }
 
 .card-body {
@@ -84,6 +39,7 @@ body {
 
 #carrinho, #detalhes {
     width: 40%;
+    cursor: pointer;
 }
 
 #botoes {
