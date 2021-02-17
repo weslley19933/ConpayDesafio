@@ -1,3 +1,23 @@
+header {
+    height: 10vh;
+}
+
+mat-toolbar {
+    position: fixed;
+    z-index: 1;
+    background-color: #e67164;
+    color: white;
+    border-bottom: 2px solid #ca6358;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+#logo {
+    width: 25%;
+    cursor: pointer;
+}
 .card {
     width: 90%;
     margin: 0 auto;
@@ -12,11 +32,6 @@
     margin-top: 2%;
     margin-bottom: 2%;
     width: 80%;
-}
-
-#paragrafoNome {
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .card:hover #paragrafoNome {
@@ -57,13 +72,8 @@ body {
         width: 20%;
     }
 
-    header {
-        height: 20vh;
-        padding-top: 5%;
-    }
-
     body {
-        margin-top: 10%;
+        margin-top: 5%;
     }
 
 
@@ -74,6 +84,10 @@ body {
 
     #logarBtn {
         margin-top: 2%;
+    }
+
+    #logo {
+        width: 10%;
     }
 
 }

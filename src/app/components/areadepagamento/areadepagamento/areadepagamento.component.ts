@@ -12,7 +12,7 @@ import { PagamentoService } from 'src/app/services/pagamento/pagamento.service';
 })
 export class AreadepagamentoComponent implements OnInit {
 
-  img ='/assets/img/logo-conpay.png'
+  img = '/assets/img/logo-conpay.png';
 
   data: any = this.pagamentoService.allProdutoObj;
    

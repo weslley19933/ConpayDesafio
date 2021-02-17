@@ -15,7 +15,6 @@ export class CartService {
 
   addToCart(produto) {
     this.items = this.getItems();
-    let newProduto = produto;
     if (this.items == null) {
       this.items = [];
       this.items.push(produto);

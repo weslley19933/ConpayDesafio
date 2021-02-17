@@ -34,6 +34,10 @@ export class LoginService {
         this.alert.alertaSnackBar("Login efetuado com sucesso!!!", "OK");
         this._location.back();
       } 
+    },
+    error => {
+      console.log(error);
+      this.alert.alertaSnackBar(error.error.message, "Ok");
     });
   }
 
@@ -73,9 +77,9 @@ export class LoginService {
       return false;
     } else if (this.isTokenExpired(token)) {
       return false;
+    } else {
+      return true;
     }
-
-    return true;
   }
 
   logout() {

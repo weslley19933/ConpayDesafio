@@ -1,5 +1,19 @@
+<header>
+  <mat-toolbar>
+    <img id="logo" [src]="logo">
+    <span class="spacer"></span>
+    <button mat-icon-button>
+      <mat-icon (click)="gotoCart()">shopping_cart</mat-icon>
+    </button>
+    <button mat-stroked-button *ngIf="isUserLoggedIn" (click)="logout()">
+      Logout
+    </button>
+    <button mat-stroked-button *ngIf="!isUserLoggedIn" (click)="login()">
+      Login
+    </button>
+  </mat-toolbar>
+</header>
 <body>
-
     <div class="container-fluid">
       <div class="row mt-2">
           <div id="colProduto" class="col-sm-6 col-lg-4 col-xl-3 mt-2 mb-2"  *ngFor="let produto of listaDeProdutos">
