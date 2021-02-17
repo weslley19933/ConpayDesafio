@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 import { LoginComponent } from './components/login/login.component';
 import { httpInterceptorProviders } from './interceptors';
 import { ProdutosComponent } from './components/produtos/produtos.component';
@@ -38,6 +39,7 @@ registerLocaleData(localePt, 'pt');
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
+    MatIconModule,
     MatSnackBarModule,
     MatButtonModule,
     AppRoutingModule,

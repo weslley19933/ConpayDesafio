@@ -4,6 +4,7 @@ import { AlertService } from '../alerts/alert.service';
 import { ApiService } from '../url/api.service';
 import jwt_decode from "jwt-decode";
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,8 @@ export class LoginService {
     private http: HttpClient, 
     private api: ApiService,
     private alert: AlertService,
-    private router: Router) {}
+    private router: Router,
+    private _location: Location) {}
 
 
   
@@ -30,6 +32,7 @@ export class LoginService {
       if(res && res.headers.get('ACCESS_TOKEN')) {
         window.localStorage.setItem('token', res.headers.get('ACCESS_TOKEN'));
         this.alert.alertaSnackBar("Login efetuado com sucesso!!!", "OK");
+        this._location.back();
       } 
     });
   }

@@ -21,9 +21,8 @@ export class CartService {
       this.items.push(produto);
       window.localStorage.setItem('cart', JSON.stringify(this.items));
     } else {
-      let verifica = this.items.find(produto => produto.product_code == newProduto.product_code);
-      console.log(verifica);
-      if (verifica) {
+      let position = this.items.findIndex (x => x.product_code == produto.product_code);
+      if (position != -1) {
         this.alert.alertaSnackBar("Este produto já está contido no seu carrinho de compras!!!","OK");
       } else {
         this.items.push(produto);
