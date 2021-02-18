@@ -1,9 +1,13 @@
+body {
+    background-color: #e67164 !important;
+}
+
 .container {
     width: 90%;
 }
 
 .card {
-    top: 15%;
+    top: 5%;
 }
 
 #title {
@@ -22,7 +26,6 @@
 #BtnComprar {
     width: 80%;
     margin: auto;
-    margin-bottom: 5%;
 }
 
 @media screen and (min-width: 1200px) {

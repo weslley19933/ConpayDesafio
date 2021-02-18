@@ -1,9 +1,18 @@
+.container-fluid, html, header {
+    background-color: #e67164 !important;
+}
+
+header {
+    position: fixed;
+}
+
 .container {
     width: 100%;
-    border: 1px solid transparent;
+    background-color: #e67164;
 }
 
 #logo {
+    margin-top: 5%;
     margin-bottom: 10%;
 }
 
@@ -30,10 +39,9 @@ fieldset {
 }
 
 button {
-    display: block;
     margin: auto;
-    margin-bottom: 10%;
     width: 100%;
+    margin-bottom: 10%;
 }
 
 @media screen and (min-width: 1200px) {
