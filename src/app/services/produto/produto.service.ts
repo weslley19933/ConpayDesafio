@@ -15,10 +15,11 @@ export class ProdutoService {
       name: "Impressora Epson EcoTank",
       description: "A Epson EcoTank L3150 é uma multifuncional tanque de tinta compacta que proporciona baixo custo",
       unitCost: 1277.67,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/hpL3150.jpg'
+      img: '/assets/img/hpL3150.jpg',
+      total: 0
     },
     {
       sku: "0002",
@@ -27,10 +28,11 @@ export class ProdutoService {
       name: "Computador Gamer Skul",
       description: "a linha de computadores Gamer é ideal para quem busca desempenho velocidade nos seus jogos",
       unitCost: 5263.05,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-10",
-      img: '/assets/img/pcgamer.jpg'
+      img: '/assets/img/pcgamer.jpg',
+      total: 0
     },
     {
       sku: "0003",
@@ -39,10 +41,11 @@ export class ProdutoService {
       name: "Monitor LG LED 23.8´ Wide",
       description: "A resolução 1080p Full HD com IPS proporciona imagens brilhantes que surgem com detalhes",
       unitCost: 888.78,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/monitor-lg.jpg'
+      img: '/assets/img/monitor-lg.jpg',
+      total: 0
     },
     {
       sku: "0004",
@@ -51,10 +54,11 @@ export class ProdutoService {
       name: "Dazz Combo 4 em 1",
       description: "O Combo 4 em 1 Arsenal Gamer da Dazz traz a proposta de reunir os instrumentos.",
       unitCost: 420.95,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-08",
-      img: '/assets/img/kittecladomouse.jpg'
+      img: '/assets/img/kittecladomouse.jpg',
+      total: 0
     },
     {
       sku: "0005",
@@ -63,10 +67,11 @@ export class ProdutoService {
       name: "Samsung Galaxy M21s",
       description: "Smartphone Samsung Galaxy M21s, 64GB, 64MP, Tela 6.4´, Preto - SM-F415FZKRZTO",
       unitCost: 1389.00,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-10",
-      img: '/assets/img/samsungm21s.jpg'
+      img: '/assets/img/samsungm21s.jpg',
+      total: 0
     },
     {
       sku: "0006",
@@ -75,10 +80,11 @@ export class ProdutoService {
       name: "iPhone 11 Preto, 128GB",
       description: "Seis novas cores lindas. Impressionante tela Liquid Retina LCD de 6,1 polegadas",
       unitCost: 5862.11,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/iphone11.jpg'
+      img: '/assets/img/iphone11.jpg',
+      total: 0
     },
     {
       sku: "0007",
@@ -87,10 +93,11 @@ export class ProdutoService {
       name: "Motorola Moto G8 Play, 32GB",
       description: "O G8 Play possui sistema de câmera tripla, para que você não perca nenhum momento",
       unitCost: 979.67,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/motog8play.jpg'
+      img: '/assets/img/motog8play.jpg',
+      total: 0
     },
     {
       sku: "0008",
@@ -99,10 +106,11 @@ export class ProdutoService {
       name: "Smartphone Asus Zenfone 2",
       description: "Zenfone 2 Deluxe Special Edition é o primeiro com 256GB de armazenamento, tem desempenho gráfico",
       unitCost: 2615.18,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-12",
-      img: '/assets/img/zenfone2deluxe.jpg'
+      img: '/assets/img/zenfone2deluxe.jpg',
+      total: 0
     },
     {
       sku: "0009",
@@ -111,10 +119,11 @@ export class ProdutoService {
       name: "Câmera Sony A9 Mirrorless",
       description: "A Câmera Sony Alpha A9 Mirrorless 4K Full-Frame traz mais velocidae e qualidade de imagem.",
       unitCost: 27162.45,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/sony.jpg'
+      img: '/assets/img/sony.jpg',
+      total: 0
     },
     {
       sku: "0010",
@@ -123,10 +132,11 @@ export class ProdutoService {
       name: "Câmera Mirrorless FujiFilm",
       description: "Atendendo às necessidades dos criadores de imagens multimídia",
       unitCost: 14299.70,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/fujifilm.jpg'
+      img: '/assets/img/fujifilm.jpg',
+      total: 0
     },
     {
       sku: "0011",
@@ -135,10 +145,11 @@ export class ProdutoService {
       name: "Câmera de Ação Atrio",
       description: "Este Capacete acompanha Câmera de Ação HD, que grava em alta resolução todos os seus movimentos",
       unitCost: 254.94,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/atrio.jpg'
+      img: '/assets/img/atrio.jpg',
+      total: 0
     },
     {
       sku: "0012",
@@ -147,10 +158,11 @@ export class ProdutoService {
       name: "Câmera Digital GoPro HERO9",
       description: "A HERO9 Black possui um sensor de 23,6 MP para vídeos de 5K e fotos de 20 MP incríveis. ",
       unitCost: 4189.37,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/goprohero.jpg'
+      img: '/assets/img/goprohero.jpg',
+      total: 0
     },
     {
       sku: "0013",
@@ -159,10 +171,11 @@ export class ProdutoService {
       name: "Sony PlayStation 4",
       description: "Jogue online com seus amigos, obtenha jogos gratuitos, salve jogos online e muito mais.",
       unitCost: 2736.74,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-08",
-      img: '/assets/img/ps4kit.jpg'
+      img: '/assets/img/ps4kit.jpg',
+      total: 0
     },
     {
       sku: "0014",
@@ -171,10 +184,11 @@ export class ProdutoService {
       name: "Console Nintendo Switch",
       description: "O mais novo console da Nintendo promete inovar na jogabilidade.",
       unitCost: 3640.45,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/nintendosw.jpg'
+      img: '/assets/img/nintendosw.jpg',
+      total: 0
     },
     {
       sku: "0015",
@@ -183,10 +197,11 @@ export class ProdutoService {
       name: "Console Sony PlayStation 5",
       description: "Desfrute do carregamento extremamente rápido com o SSD de altíssima velocidade.",
       unitCost: 4699.96,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/ps5.jpg'
+      img: '/assets/img/ps5.jpg',
+      total: 0
     },
     {
       sku: "0016",
@@ -195,10 +210,11 @@ export class ProdutoService {
       name: "Microsoft Xbox Series S",
       description: "o Xbox Series S oferece desempenho e velocidade de última geração em um formato totalmente digital.",
       unitCost: 1277.67,
-      quantity: 1,
+      quantity: 0,
       discount: 0,
       createdAt: "2021-02-09",
-      img: '/assets/img/xboxseries.jpg'
+      img: '/assets/img/xboxseries.jpg',
+      total: 0
     }
   ]
 

@@ -1,12 +1,14 @@
-<div class="wrapper">
-  <div id="formContent">
-    <div>
-      <img [src]="img" id="logo"/>
+<body>
+  <div class="wrapper">
+    <div id="formContent">
+      <div>
+        <img [src]="img" id="logo"/>
+      </div>
+      <form [formGroup]="fGroup">
+        <input type="text" id="login" formControlName="accessKeyId"  placeholder="login">
+        <input type="password" id="password" formControlName="secretKey" placeholder="password">
+        <input type="submit" (click)="onSubmit()" class="fadeIn fourth" value="Logar">
+      </form>
     </div>
-    <form [formGroup]="fGroup">
-      <input type="text" id="login" formControlName="accessKeyId"  placeholder="login">
-      <input type="password" id="password" formControlName="secretKey" placeholder="password">
-      <input type="submit" (click)="onSubmit()" class="fadeIn fourth" value="Logar">
-    </form>
   </div>
-</div>
+</body>

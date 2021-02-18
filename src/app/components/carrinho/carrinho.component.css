@@ -1,5 +1,32 @@
-.container, .container-fluid, body {
-    background-color: white;
+mat-icon {
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+mat-icon::selection {
+    background-color: transparent;
+}
+
+table {
+    display: table;
+    width: 100%;
+}
+
+tbody {
+    border-bottom: 1px solid #dee2e6;
+}
+
+td {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+th, td {
+    text-align: left; 
+}
+
+.qtd {
+    text-align: center;
 }
 
 body {
@@ -13,37 +40,13 @@ body {
     flex-grow: 1;
 }
 
-#logo {
-    display: flex;
-    vertical-align: center;
-}
-
-#VoltarBtn {
-    margin: auto;
-    width: 80%;
-    margin-top: 3%;
-    margin-bottom: 3%;
-}
-
-#cabecalho {
-    padding: 1%;
-}
-
-#carrinhoIcon {
-    width: 30px;
-}
-
-#spanCarrinho {
-    font-size: 22px;
-    padding-inline-start: 7px;
-}
 
 #contCompraBtn {
     float: right;
 }
 
 #imagemProd {
-    width: 50%;
+    height: 50px;
 }
 
 #listaProd{
@@ -61,10 +64,6 @@ body {
     display: flex;
     justify-content: left;
     align-items: center;
-}
-
-#addImg, #subtrairIcon {
-    cursor: pointer;
 }
 
 #finalizaCompraBtn {

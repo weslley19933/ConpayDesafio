@@ -14,6 +14,9 @@ export class CartService {
   ) { }
 
   addToCart(produto) {
+    produto.quantity++;
+    produto.total = produto.quantity * produto.unitCost;
+    console.log(produto.quantity);
     this.items = this.getItems();
     if (this.items == null) {
       this.items = [];
@@ -34,6 +37,16 @@ export class CartService {
   getItems() {
     this.items = JSON.parse(window.localStorage.getItem('cart'));
     return this.items;
+  }
+
+  getTotalProd(produto) {
+    this.items = this.getItems();
+    let position = this.items.findIndex (x => x.product_code == produto.product_code);
+    if (position != -1) {
+      this.items[position].total = this.items[position].quantity*this.items[position].unitCost;
+    }
+    window.localStorage.setItem('cart', JSON.stringify(this.items));
+    return this.items[position].total;
   }
 
   clearCart() {

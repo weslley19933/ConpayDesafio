@@ -8,5 +8,6 @@ export interface Produto {
     quantity: number,
     discount: number,
     createdAt: string,
-    img: string
+    img: string,
+    total: number
 }

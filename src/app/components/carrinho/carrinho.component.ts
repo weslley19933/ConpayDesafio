@@ -48,6 +48,7 @@ export class CarrinhoComponent implements OnInit {
 
   increaseQtd(produto) {
     this.cartService.increaseQuantity(produto);
+    this.cartService.getTotalProd(produto);
     this.items = this.cartService.getItems();
     this.getTotal();
     return this.items;
@@ -55,6 +56,7 @@ export class CarrinhoComponent implements OnInit {
 
   decreaseQtd(produto) {
     this.cartService.decreaseQuantity(produto);
+    this.cartService.getTotalProd(produto);
     this.items = this.cartService.getItems();
     this.getTotal();
     return this.items;
@@ -63,8 +65,8 @@ export class CarrinhoComponent implements OnInit {
   getTotal() {
     this.value = 0;
     this.items = this.cartService.getItems();
-    this.items.forEach(item => {
-      this.value += (item.quantity * item.unitCost);
+    this.items.forEach(produto => {
+      this.value += (produto.quantity * produto.unitCost);
     })
   }
 

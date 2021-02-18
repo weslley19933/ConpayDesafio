@@ -3,11 +3,11 @@ header {
 }
 
 mat-toolbar {
+    padding: 3%;
     position: fixed;
     z-index: 1;
     background-color: #e67164;
     color: white;
-    border-bottom: 2px solid #ca6358;
 }
 
 .spacer {
@@ -16,7 +16,6 @@ mat-toolbar {
 
 #logo {
     width: 25%;
-    cursor: pointer;
 }
 .card {
     width: 90%;
@@ -24,7 +23,7 @@ mat-toolbar {
 }
 
 .card-body {
-    border-top: 1px solid #e67164;
+    border-top: 1px solid #dee1e6;
 }
 
 #produtoImg {

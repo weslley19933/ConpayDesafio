@@ -1,37 +1,36 @@
 <body>
     <div class="body">
-        <div class="container-fluid">
-            <div class="row" id="cabecalho">
-                <div id="logo" class="col-md-6 col-lg-6 col-xl-6">
-                    <img [src]="imgs.carrinho" id="carrinhoIcon">
-                </div>
-                <div class="col-md-6 col-lg-6 col-xl-6">
-                    <button type="button" class="btn btn-dark btn-sm" id="contCompraBtn" (click)="backTOListProd()">Continuar comprando</button>
-                </div>
-            </div>
-            <div class="row" id="listaProd" *ngFor="let item of items">
-                <div class="col-xl-3">
-                    <img id="imagemProd" [src]="item.img">
-                </div>
-                <div class="col-xl-5" id="nome">
-                    <strong >{{item?.name}}</strong>
-                </div>
-                <div id="divQuantidade" class="col-xl-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Preço</th>
+                    <th class="qtd" scope="col">Quantidade</th>
+                    <th scope="col">Total</th>
+                    <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of items">
+                    <td style="width:100px"><img id="imagemProd" [src]="item.img"></td>
+                    <td>{{item.name}}</td>
+                    <td style="width:100px">{{item.unitCost | currency: "R$"}}</td>
+                    <td class="qtd">
+    
+                        <mat-icon (click)="increaseQtd(item)">add_circle</mat-icon>
+                        {{item.quantity}}
+                        <mat-icon (click)="decreaseQtd(item)">remove_circle_outline</mat-icon>
                     
-                    <strong id="espacamento">{{item.unitCost | currency: "R$"}} x</strong>
-
-                    <img id="addImg" [src]="imgs.adicionar" (click)="increaseQtd(item)">
-               
-                    <strong id="quantidade">{{item?.quantity}}</strong>
-                
-                    <img id="subtrairIcon" [src]="imgs.subtrair" (click)="decreaseQtd(item)">
-                </div>
-                <div id="remover" class="col-xl-1">
-                    <img [src]="imgs.remover" (click)="removeProd(item)">
-                </div>
-            </div>
-        </div>
-        
+                       
+                    </td>
+                    <td>{{item.total | currency: "R$"}}</td>
+                    <td id="lixeira">
+                        <mat-icon (click)="removeProd(item)">delete</mat-icon>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
     </div>  
     
     <footer class="bg-light">
